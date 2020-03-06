@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather Map</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css' rel='stylesheet'/>
+    <link rel="stylesheet" href="css/weather_map.css">
+</head>
+<body>
+<div class="wrapper">
+    <div id="main-header-container">
+        <div id="main-heading-container">
+            <h1><span class="ultra-font">W</span>eather <span class="ultra-font">E</span>veryone <span
+                    class="ultra-font">T</span>rusts <span class="ultra-font">2.0</span></h1>
+        </div>
+        <div id="nav-links-container">
+            <label class="nav-link" for="search-location-input" id="search-location-label">Search by Location:</label>
+            <input class="nav-link" type="text" id="search-location-input" placeholder="enter search..">
+            <button class="nav-link" type="button" id="search-location-button">Search</button>
+            <i class="far fa-question-circle nav-link" id="question-icon"></i>
+            <p id="question-tooltip">Alternatively, you can search for latitude and longitude coordinates using <span>'%'</span>
+                modifier as prefix and separated by <span>','</span>.<br>For example
+                <span>'%29.424349,-98.491142'</span> searches for:<br>Latitude: 29.424349 and Longitude:
+                -98.491142.</p>
+            <img class="nav-link menu-icon" id="menu-open-icon" src="./img/raindrops-open-menu.png"
+                 alt="image of rain drop">
+        </div>
+        <nav id="menu-sidebar-container">
+            <img class="menu-icon" id="menu-close-icon" src="./img/raindrops-close-menu.png" alt="image of rain drop">
+            <ul class="menu-links">
+                <li class="menu-item">
+                    <h2>Temperature</h2>
+                    <ul class="sub-links">
+                        <li class="sub-item" id="fahrenheit-flag">Convert Temperature to Fahrenheit</li>
+                        <li class="sub-item" id="celsius-flag">Convert Temperature to Celsius</li>
+                    </ul>
+                </li>
+                <li class="menu-item">
+                    <h2>Forecast</h2>
+                    <ul class="sub-links">
+                        <li class="sub-item" id="3-day-flag">3 Day Forecast</li>
+                        <li class="sub-item" id="hourly-flag">6 Hour Forecast</li>
+                    </ul>
+                </li>
+                <li class="menu-item">
+                    <h2>Map Style</h2>
+                    <ul class="sub-links" id="street-links">
+                        <li class="sub-item">Street</li>
+                        <li class="sub-item">Outdoors</li>
+                        <li class="sub-item">Light</li>
+                        <li class="sub-item">Dark</li>
+                        <li class="sub-item">Satellite</li>
+                        <li class="sub-item">Satellite Street</li>
+                        <li class="sub-item">Navigation Day</li>
+                        <li class="sub-item">Navigation Night</li>
+                        <li class="sub-item">Navigation Guidance Day</li>
+                        <li class="sub-item">Navigation Guidance Night</li>
+                    </ul>
+                </li>
+                <li class="menu-item"><h2>Contact Us</h2></li>
+                <li class="menu-item"><h2>About Us</h2></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="city-heading-container">
+        <!--Dynamically created using JScript-->
+    </div>
+    <div class="body-container" id="main-body-container-1">
+        <!--Dynamically created using JScript-->
+    </div>
+    <div class="body-container" id="main-body-container-2">
+        <!--Dynamically created using JScript-->
+    </div>
+    <div class="body-container" id="main-body-container-3">
+        <!--Dynamically created using JScript-->
+    </div>
+    <div id="mapbox-container">
+        <h1 id="mapbox-heading">Interactive Map</h1>
+        <div id='mapbox-map'></div>
+        <pre id="coordinates" class="coordinates"></pre>
+    </div>
+    <div id="main-footer-container">
+
+    </div>
+</div>
+
+<div id="loading-modal">
+    <p id="loading-tagline">Loading...</p>
+</div>
+
+
+<script src="js/jquery-2.2.4.js"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+<script src="js/weather_map.js" type="module"></script>
+</body>
+</html>
